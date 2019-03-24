@@ -1,4 +1,12 @@
 ###############################################################################
+# Installing Packages
+
+# Installation is done for local user
+# python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+
+import numpy as np
+
+###############################################################################
 # Numbers
 
 # Numbers without decimals is type int
@@ -126,7 +134,7 @@ def fib(n):    # write Fibonacci series up to n
     """Print a Fibonacci series up to n."""
     a, b = 0, 1
     while a < n:
-        print(a, end=' ')
+        print(a, ' ')
         a, b = b, a+b
     print()
 
@@ -142,7 +150,7 @@ f(100)
 # Hash Tables
 
 # Dictionary represents the implementation of a hash table
-# Declare a dictionary 
+# Declare a dictionary
 dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 # Accessing the dictionary with its key
