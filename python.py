@@ -1,3 +1,5 @@
+# Tutorial link: https://docs.python.org/3/tutorial/
+
 ###############################################################################
 # Installing Packages
 
@@ -93,6 +95,16 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 letters[2:5] = ['C', 'D', 'E']
 len(letters) # return size of list
 
+# Using lists as function arguments
+list(range(3, 6)) # normal call with separate arguments
+# prints [3, 4, 5]
+args = [3, 6]
+list(range(*args)) # call with arguments unpacked from a list
+# prints [3, 4, 5]
+
+# range() function expects separate start and stop arguments
+# If they are not available, then use the * operator to unpack the list
+
 ###############################################################################
 # Flow Control
 # x = int(input("Please enter an integer: "))
@@ -145,6 +157,36 @@ fib(2000)
 f = fib
 f(100)
 
+# Using default parameters for function arguments
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+# Calling the function
+ask_ok('Do you really want to quit?')
+ask_ok('OK to overwrite the file?', 2)
+ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
+
+# in keyword tests whether a sequence contains a certain value
+
+# Default values are evaluated at the point of function definition in the defining scope
+i = 5
+def f(arg=i):
+    print(arg)
+i = 6
+f() # this prints 5
+
+
+# Lambda Functions
+# Anonymous functions
 
 ###############################################################################
 # Hash Tables
